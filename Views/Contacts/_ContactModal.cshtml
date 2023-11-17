@@ -1,0 +1,52 @@
+﻿@model Test_Task.Models.DBEntities.Contact
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="modal" id="ContactModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" asp-for="Id" value="0" />
+                <div class="mb-2">
+                    <label asp-for="Name"></label>
+                    <input type="text" asp-for="Name" class="form-control" placeholder="ektrshha" />
+                    <label class="text-danger"  id="nameInfoLabel"></label>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="MobilePhone"></label>
+                    <input type="text" asp-for="MobilePhone" class="form-control" placeholder="+375333539738"  />
+                    <label class="text-danger" id="phoneInfoLabel"></label>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="JobTitle"></label>
+                    <input type="text" asp-for="JobTitle" class="form-control" placeholder="Developer" />
+                    <label class="text-danger" id="jobInfoLabel"></label>
+                </div>
+                <div class="mb-2">
+                    <label asp-for="BirthDate"></label>
+                    <input type="datetime-local" asp-for="BirthDate" class="form-control" placeholder="" />
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="Save" type="submit" onclick="Insert();">Save</button>
+                <button class="btn btn-success" id="Update" type="submit" onclick="Update();" style="display:none">Update</button>
+                <button class="btn btn-danger" data-bs-dismiss="modal" onclick="HideModal();">Close</button>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/contact.js"></script>
